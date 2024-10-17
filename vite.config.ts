@@ -9,7 +9,7 @@ import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: '/NutritionTime_Dev-test/',
+	base: '/FccGame/',
 	server: {
 		port: 9090
 	},

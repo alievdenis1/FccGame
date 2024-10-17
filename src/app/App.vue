@@ -1,7 +1,5 @@
 <template>
 	<TonConnectUIProvider :options="options">
-		<VConfirm />
-
 		<component :is="layout">
 			<div
 				v-if="isLoading"
@@ -24,7 +22,6 @@ import { twa } from '@/shared/lib/api/twa'
 import { useLocaleStore } from '@/shared/lib/i18n'
 import { useAuthorization } from '@/features/Auth/log-in'
 import { useSessionStore } from '@/entities/Session'
-import { VConfirm } from '@/shared/components/Confirm'
 import { TonConnectUIProvider } from '@townsquarelabs/ui-vue'
 
 const route = useRoute()
@@ -43,7 +40,7 @@ const authUser = async () => {
   }
 }
 const options = {
- manifestUrl: 'https://alievdenis1.github.io/nutritiontime/tonconnect-manifest.json',
+ manifestUrl: 'https://alievdenis1.github.io/FccGame/tonconnect-manifest.json',
  language: sessionStore.lang
 }
 
@@ -53,9 +50,9 @@ if (twa) {
   twa.disableVerticalSwipes()
   twa.expand()
   twa.onEvent('viewportChanged', ({ isStateStable }) => {
-	if (isStateStable) {
-		twa && twa.expand()
-	}
+   if (isStateStable) {
+    twa && twa.expand()
+   }
   })
 }
 

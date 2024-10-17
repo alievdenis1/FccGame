@@ -1,1 +1,1 @@
-export { useWalletStore } from './model/wallet.balance.store'
+export { useWalletStore } from './model/wallet.store.ts'

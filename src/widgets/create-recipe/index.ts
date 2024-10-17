@@ -1,1 +1,0 @@
-export { default as CreateRecipeTabs } from './CreateRecipeTabs.vue'

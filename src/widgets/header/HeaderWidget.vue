@@ -7,7 +7,7 @@
 			<img
 				alt="Logo"
 				height="34"
-				src="/image/logo/logo-small.svg"
+				src="/image/logo/logo-icon.png"
 				width="178"
 				class="logo-image"
 			>
