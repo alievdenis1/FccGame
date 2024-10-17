@@ -1,9 +1,9 @@
 <template>
-	<header-widget />
+	<!--	<header-widget />-->
 	<main
 		v-show="isLoading"
 		id="main"
-		class="layout layout--main pb-[100px] bg-mainBg"
+		class="layout layout--main bg-mainBg"
 	>
 		<slot />
 	</main>
@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { HeaderWidget } from 'widgets/header'
+// import { HeaderWidget } from 'widgets/header'
 import { VSkeletonLocalization } from 'shared/components/ui/skeleton'
 import { useLocaleStore } from '@/shared/lib/i18n'
 import { storeToRefs } from 'pinia'

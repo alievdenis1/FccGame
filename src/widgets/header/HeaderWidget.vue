@@ -3,82 +3,81 @@
 		ref="target"
 		class="grid"
 	>
-		<header class="flex bg-mainBg items-center gap-5 w-full justify-between pt-[16px] pr-[16px] pl-[16px]">
-			<img
-				alt="Logo"
-				height="34"
-				src="/image/logo/logo-icon.png"
-				width="178"
-				class="logo-image"
-			>
+		<header
+			class="bg-black text-white flex
+		items-center gap-5 w-full justify-between pt-[16px] pr-[16px] pl-[16px]"
+		>
+			<div class="" />
 
 			<div class="flex items-center gap-[8px]">
-				<button
-					class="settings-button py-[10px] px-[16px] relative"
-					@click="navigateToWallet"
-				>
-					<IconWallet />
-				</button>
+				<!--				<button-->
+				<!--					class="settings-button py-[10px] px-[16px] relative"-->
+				<!--					@click="navigateToWallet"-->
+				<!--				>-->
+				<!--					<IconWallet />-->
+				<!--				</button>-->
 
-				<button
-					aria-label="Settings"
-					:aria-expanded="languageDropDownOpen"
-					class="settings-button p-[12px]"
-					role="button"
-					@click="languageDropDownOpen = !languageDropDownOpen"
-				>
-					{{ t('lang') }}
-					<IconArrow
-						:icon-color="'#1C1C1C'"
-						:icon-width="14"
-						:icon-height="14"
-						:class="{ 'rotate-180': languageDropDownOpen }"
-					/>
-					<div
-						v-show="languageDropDownOpen"
-						class="language-dropdown"
-					>
-						<button
-							:class="{ 'active': isActiveLocale('ru') }"
-							@click="localeStore.setLocale('ru')"
-						>
-							Rus
-						</button>
-						<button
-							:class="{ 'active': isActiveLocale('en') }"
-							@click="localeStore.setLocale('en')"
-						>
-							Eng
-						</button>
-					</div>
-				</button>
+				<!--				<button-->
+				<!--					aria-label="Settings"-->
+				<!--					:aria-expanded="languageDropDownOpen"-->
+				<!--					class="settings-button p-[12px]"-->
+				<!--					role="button"-->
+				<!--					@click="languageDropDownOpen = !languageDropDownOpen"-->
+				<!--				>-->
+				<!--				{{ t('lang') }}-->
+				<!--				<IconArrow-->
+				<!--					:icon-color="'#1C1C1C'"-->
+				<!--					:icon-width="14"-->
+				<!--					:icon-height="14"-->
+				<!--					:class="{ 'rotate-180': languageDropDownOpen }"-->
+				<!--				/>-->
+				<!--				<div-->
+				<!--					v-show="languageDropDownOpen"-->
+				<!--					class="language-dropdown"-->
+				<!--				>-->
+				<!--					<button-->
+				<!--						:class="{ 'active': isActiveLocale('ru') }"-->
+				<!--						@click="localeStore.setLocale('ru')"-->
+				<!--					>-->
+				<!--						Rus-->
+				<!--					</button>-->
+				<!--					<button-->
+				<!--						:class="{ 'active': isActiveLocale('en') }"-->
+				<!--						@click="localeStore.setLocale('en')"-->
+				<!--					>-->
+				<!--						Eng-->
+				<!--					</button>-->
+				<!--				</div>-->
 			</div>
 		</header>
 	</div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
-import Localization from './HeaderWidget.localization.json'
+import {
+ ref,
+ // computed,
+} from 'vue'
+// import Localization from './HeaderWidget.localization.json'
 import { onClickOutside } from '@vueuse/core'
-import { useRouter } from 'vue-router'
-import { useLocaleStore, useTranslation } from '@/shared/lib/i18n'
-import { IconWallet, IconArrow } from '@/shared/components/Icon'
+// import { useRouter } from 'vue-router'
+// import { useLocaleStore, useTranslation } from '@/shared/lib/i18n'
+// import { IconWallet, IconArrow } from '@/shared/components/Icon'
 
-const router = useRouter()
+// const router = useRouter()
 
-const localeStore = useLocaleStore()
-const { t } = useTranslation(Localization)
+// const localeStore = useLocaleStore()
+// const { t } = useTranslation(Localization)
 const target = ref(null)
 
 const languageDropDownOpen = ref(false)
 
 onClickOutside(target, () => languageDropDownOpen.value = false)
-const isActiveLocale = computed(() => (locale: string) => localeStore.currentLocale === locale)
+// const isActiveLocale = computed(() => (locale: string) => localeStore.currentLocale === locale)
 
-const navigateToWallet = () => {
-	router.push('/wallet')
-}
+// const navigateToWallet = () => {
+// 	router.push('/wallet')
+// }
 </script>
 
 <style lang="scss" scoped>
