@@ -47,9 +47,9 @@
  }
 
  const buttons = [
-  '/image/btn1.png',
-  '/image/btn2.png',
-  '/image/btn3.png'
+  '/FccGame/image/btn1.png',
+  '/FccGame/image/btn2.png',
+  '/FccGame/image/btn3.png'
  ]
 
  // const goToUpgrades = () => {
