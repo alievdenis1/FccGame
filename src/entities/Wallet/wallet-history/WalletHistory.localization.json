@@ -2,23 +2,27 @@
     "ru": {
         "inviteFriends": "Пригласить друзей",
         "shareTitle": "Приглашение",
-        "shareText": "Приглашаю тебя присоединиться и получить 500 $RCPT!",
-        "getBonus": "Получите 500 $RCPT за рекомендацию!",
-        "eachFriend": "За каждого друга начислим 500 $RCPT",
+        "shareText": "Приглашаю тебя присоединиться и получить 500 $FCC!",
+        "getBonus": "Получите 500 $FCC за рекомендацию!",
+        "eachFriend": "За каждого друга начислим 500 $FCC",
         "history": "История",
         "transactionHistory": "Здесь будет храниться история зачислений",
         "invitation": "Приглашение",
-        "invitationDescription": "Приглашаю тебя присоединиться к Nutrition Time!"
+        "invitationDescription": "Приглашаю тебя присоединиться к Fight Club!",
+        "referral": "Награда за приглашение: {{invitedUserName}}",
+        "mining": "Заработано за игру"
     },
     "en": {
         "inviteFriends": "Invite friends",
         "shareTitle": "Invitation",
-        "shareText": "I invite you to join and get 500 $RCPT!",
-        "getBonus": "Get 500 $RCPT for a recommendation!",
-        "eachFriend": "Earn 500 $RCPT for each friend",
+        "shareText": "I invite you to join and get 500 $FCC!",
+        "getBonus": "Get 500 $FCC for a recommendation!",
+        "eachFriend": "Earn 500 $FCC for each friend",
         "history": "History",
         "transactionHistory": "The transaction history will be stored here",
         "invitation": "Invitation",
-        "invitationDescription": "I invite you to join Nutrition Time!"
+        "invitationDescription": "I invite you to join Fight Club!",
+        "referral": "Referral reward for inviting {{invitedUserName}}",
+        "mining": "Earned for playing"
     }
 }

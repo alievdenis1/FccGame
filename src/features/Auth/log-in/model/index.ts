@@ -16,16 +16,13 @@ export const useAuthorization = () => {
 
         isLoading.value = true
         try {
-            // TODO: удалить, использовать twa.ready при инициализации приложения
-            // await twa.ready()
             const twaUser = twa.initDataUnsafe.user
 
             if (!twaUser) {
                 throw new Error('User data is not available from TWA')
             }
 
-            // console.log('TWA', twaUser)
-            if (twaUser.language_code != undefined) {
+            if (twaUser.language_code !== undefined) {
                 sessionStore.setLang(twaUser.language_code as Locales)
             }
 
@@ -33,6 +30,7 @@ export const useAuthorization = () => {
                 telegram_id: twaUser.id.toString(),
                 first_name: twaUser.first_name,
                 last_name: twaUser.last_name || '',
+                referral_code: twa.initDataUnsafe?.start_param || null,
             })
 
             await execute()

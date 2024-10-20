@@ -21,20 +21,17 @@
 </template>
 
 <script setup lang="ts">
- import { onMounted, ref, watch } from 'vue'
+ import { ref, watch } from 'vue'
  import { IconGold } from '@/shared/components/Icon'
- import { TonConnectButton, useTonAddress, useTonWallet } from '@townsquarelabs/ui-vue'
+ import { TonConnectButton, useTonAddress } from '@townsquarelabs/ui-vue'
  import { TonApiClient, Api } from '@ton-api/client'
  import { Address } from '@ton/core'
-
- const loading = ref(true)
 
  // Новый код для проверки NFT с использованием TonAPI.io
  const walletConnected = ref(false)
  const checkingNFT = ref(false)
  const hasNFT = ref(false)
  const userAddress = useTonAddress()
- const wallet = useTonWallet()
 
  const COLLECTION_ADDRESS = 'EQDERkmRDrXxzEbZUMMgo3uDJwe24qUYpnasJ83WpQZaqjJ1'
  const collectionAddress = Address.parseFriendly(COLLECTION_ADDRESS).address
@@ -69,30 +66,16 @@
   }
  }
 
- // Следим за изменением кошелька
- watch(wallet, (newWallet) => {
-  walletConnected.value = !!newWallet
-  if (newWallet) {
+ // Следим за изменением адреса кошелька
+ watch(userAddress, (newUserAddress) => {
+  walletConnected.value = !!newUserAddress
+  if (newUserAddress) {
    checkNFT()
   } else {
    hasNFT.value = false
   }
- })
-
- onMounted(async () => {
-  const isLocal = import.meta.env.VITE_USE_TWA_MOCK
-
-  if (isLocal) {
-   console.warn('TWA is not available. Some features may not work correctly.')
-  }
-
-  loading.value = false
-
-  // Проверяем NFT при монтировании, если кошелек уже подключен
-  if (wallet.value) {
-   walletConnected.value = true
-   await checkNFT()
-  }
+ }, {
+   immediate: true,
  })
 </script>
 
